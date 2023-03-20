@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+    <bean id="repository" class="ma.ecom.repositories.impl.ProductRepositoryImpl"></bean>
+
+    <bean id="service" class="ma.ecom.services.imlp.ProductServiceImpl">
+        <property name="productRepository" ref="repository"></property>
+    </bean>
+
+    <bean id="controller" class="ma.ecom.controllers.ProductControler">
+        <property name="productService" ref="service"></property>
+    </bean>
+</beans>
