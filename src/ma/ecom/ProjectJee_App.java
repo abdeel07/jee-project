@@ -26,8 +26,8 @@ public class ProjectJee_App {
     public static void main(String[] args) throws Exception {
         //test1();
         //test2();
-        test3();
-        //test4();
+        //test3();
+        test4();
     }
 
     private static Boolean isNumber(String input){
@@ -146,7 +146,7 @@ public class ProjectJee_App {
     }
 
     public static void test4() throws Exception {
-        ApplicationContext context = new AnnotationConfigApplicationContext();
+        ApplicationContext context = new AnnotationConfigApplicationContext("ma.ecom.repositories","ma.ecom.services","ma.ecom.controllers");
         productControler = (IProductControler) context.getBean(IProductControler.class);
 
         Product product = productControler.findProductById(1L);
