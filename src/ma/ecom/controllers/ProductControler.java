@@ -5,12 +5,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import ma.ecom.entities.Product;
 import ma.ecom.services.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
+@Controller
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductControler implements IProductControler{
 
+    @Autowired
     ProductService productService;
 
     public Product findProductById(Long id){

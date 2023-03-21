@@ -3,7 +3,9 @@ package ma.ecom.repositories.impl;
 import ma.ecom.entities.Product;
 import ma.ecom.repositories.DB.ProductDB;
 import ma.ecom.repositories.ProductRepository;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProductRepositoryImpl implements ProductRepository {
     @Override
     public Product findById(Long id) {

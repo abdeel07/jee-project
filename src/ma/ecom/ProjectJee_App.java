@@ -8,6 +8,7 @@ import ma.ecom.repositories.impl.ProductRepositoryImpl;
 import ma.ecom.services.ProductService;
 import ma.ecom.services.imlp.ProductServiceImpl;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
@@ -26,6 +27,7 @@ public class ProjectJee_App {
         //test1();
         //test2();
         test3();
+        //test4();
     }
 
     private static Boolean isNumber(String input){
@@ -138,6 +140,14 @@ public class ProjectJee_App {
     public static void test3() throws Exception {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-ioc.xml");
         productControler = (IProductControler) context.getBean("controller");
+
+        Product product = productControler.findProductById(1L);
+        System.out.println(product.toString());
+    }
+
+    public static void test4() throws Exception {
+        ApplicationContext context = new AnnotationConfigApplicationContext();
+        productControler = (IProductControler) context.getBean(IProductControler.class);
 
         Product product = productControler.findProductById(1L);
         System.out.println(product.toString());

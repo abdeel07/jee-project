@@ -7,12 +7,16 @@ import ma.ecom.entities.Product;
 import ma.ecom.repositories.DB.ProductDB;
 import ma.ecom.repositories.ProductRepository;
 import ma.ecom.services.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductServiceImpl implements ProductService {
 
+    @Autowired
     ProductRepository productRepository;
 
     @Override
